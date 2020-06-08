@@ -34,6 +34,20 @@
     background: #56b870; /* Old browsers */
     // linear background gradient from top to bottom
     background: linear-gradient(#56b870 0%, #a5c956 100%); /* W3C */
+
+    // grid-column-start: 1;
+    // grid-column-end: 3;
+    // grid-column: 1/3;
+    // start at one and keep going till the end:
+    // grid-column: 1/-1;
+    // grid-column: span 2;
+
+    // grid-row: span 2;
+    // grid-row: 1/3;
+    // alligns item in row -> only current item, hence justify-self
+    // justify-self: start;
+    // alligns item in column -> only current item, hence align-self
+    // align-self: end;
   }
 
   /***********************************************************************

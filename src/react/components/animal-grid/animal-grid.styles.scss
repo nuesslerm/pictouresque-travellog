@@ -1,11 +1,11 @@
 .animal-grid {
   display: grid;
-  grid-gap: 10px;
+  gap: 10px;
   // grid-template-columns: repeat(3, 1fr);
   // grid-template-columns: repeat(auto-fill, 300px);
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-template-rows: 1fr;
-  // alligns items in row
+  // alligns items in row -> all items, hence justify-items
   // justify-items: start;
   // alligns items in column
   // align-items: end;
