@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Form from './components/form.component.jsx';
+import AnimalGrid from './components/animal-grid/animal-grid.component.jsx';
 
 import './App.css';
 
@@ -14,9 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <hr />
-        <p>This is part of ReactDOM:</p>
-        <Form />
+        <AnimalGrid />
       </div>
     );
   }
