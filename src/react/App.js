@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AnimalGrid from './components/animal-grid/animal-grid.component.jsx';
+import HomePage from './pages/homepage/homepage.component.jsx';
 
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <AnimalGrid />
+        <HomePage />
       </div>
     );
   }
