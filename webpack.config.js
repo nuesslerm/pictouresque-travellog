@@ -20,17 +20,6 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-// DOESN'T WORK v
-// if (process.env.NODE_ENV !== 'production') {
-//   module.exports.devServer = {
-//     contentBase: path.join(__dirname, 'src'),
-//     watchContentBase: true,
-//     hot: true,
-//     open: true,
-//     inline: true,
-//   };
-// }
-
 module.exports = {
   entry: ['./src/index.js'],
 
@@ -83,25 +72,17 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         use: [
           {
-            // After all CSS loaders we use plugin to do his work.
-            // It gets all transformed CSS and extracts it into separate
-            // single bundled file
             loader: MiniCssExtractPlugin.loader,
           },
           { loader: 'css-loader' },
           {
-            // Then we apply postCSS fixes like autoprefixer and minifying
             loader: 'postcss-loader',
           },
           {
-            // First we transform SASS to standard CSS
             loader: 'sass-loader?sourceMap',
-            // options: {
-            //   implementation: require('sass'),
-            // },
           },
         ],
       },
@@ -109,15 +90,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/,
         use: [
           {
-            // make sure that the asset storage folder is called "./src/images"
-            //
-            // name needs to be the same path as referenced in the style file, ie.
-            // if background: url('./images/header.jpg')
-            // then ?name=./images/[name].[ext]'
-            //
-            // if background: url('images/header.jpg')
-            // then ?name=images/[name].[ext]'
-            loader: 'file-loader?name=./images/[name].[ext]',
+            loader: 'file-loader?name=./img/[name].[ext]',
           },
         ],
       },
