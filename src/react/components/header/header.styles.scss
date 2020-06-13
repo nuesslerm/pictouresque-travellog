@@ -1,6 +1,11 @@
-/***********************************************************************
- *  Green Background
- **********************************************************************/
-.green {
-  background: linear-gradient(#56b870 0%, #a5c956 100%); /* W3C */
+.header-styles {
+  .navbar-brand {
+    cursor: pointer;
+  }
+
+  .logo-container {
+    height: 100%;
+    width: 3rem;
+    padding: 2px;
+  }
 }
