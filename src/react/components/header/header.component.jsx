@@ -13,7 +13,8 @@ const Header = ({ history }) => (
     <nav className="navbar navbar-expand-md navbar-light bg-light w-100">
       <div
         className="navbar-brand 
-        px-lg-5 
+        pl-lg-5 
+        pr-lg-3
         px-md-3
         px-sm-3
         px-3"
@@ -21,13 +22,22 @@ const Header = ({ history }) => (
       >
         <Logo className="logo-container" />
       </div>
-      <div className="navbar-collapse collapse">PicTourEsque</div>
+      <div
+        className="navbar-collapse collapse 
+                      px-xl-5
+                      px-lg-3
+                      px-md-3
+                      px-sm-2
+                      px-3"
+      >
+        <h3>PicTourEsque</h3>
+      </div>
 
       <div className="d-flex align-items-center">
         <div
           className="nav-item active dropdown 
                       px-xl-5
-                      px-lg-5
+                      px-lg-4
                       px-md-3
                       px-sm-3
                       px-3"
