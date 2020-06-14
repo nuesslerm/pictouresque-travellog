@@ -87,10 +87,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/,
+        test: /\.(png|jpe?g|gif|ico)$/,
         use: [
           {
-            loader: 'file-loader?name=./img/[name].[ext]',
+            loader: 'file-loader?name=./assets/[name].[ext]',
           },
         ],
       },
