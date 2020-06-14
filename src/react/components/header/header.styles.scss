@@ -1,6 +1,8 @@
 .header-styles {
-  .navbar-brand {
+  .navbar-brand,
+  .nav-item {
     cursor: pointer;
+    text-transform: uppercase;
   }
 
   .logo-container {

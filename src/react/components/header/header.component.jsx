@@ -10,67 +10,104 @@ import './header.styles.scss';
 
 const Header = ({ history }) => (
   <div className="header-styles">
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="navbar-brand" onClick={() => history.push('/')}>
+    <nav className="navbar navbar-expand-md navbar-light bg-light w-100">
+      <div
+        className="navbar-brand 
+        px-lg-5 
+        px-md-3
+        px-sm-3
+        px-3"
+        onClick={() => history.push('/')}
+      >
         <Logo className="logo-container" />
       </div>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Link
-            </a>
-          </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
-                Action
-              </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link disabled" href="#">
-              Disabled
-            </a>
-          </li>
-        </ul>
-        <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
+      <div className="navbar-collapse collapse"></div>
+
+      <div className="d-flex align-items-center">
+        <div
+          className="nav-item active dropdown 
+                      px-xl-5
+                      px-lg-5
+                      px-md-3
+                      px-sm-3
+                      px-3"
+        >
+          <div
+            // className="btn"
+            className="dropdown-toggle"
+            onClick={() => history.push('/')}
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
           >
-            Search
-          </button>
-        </form>
+            {'Cart '}
+          </div>
+          {
+            // <button
+            //   class="btn dropdown-toggle dropdown-toggle-split"
+            //   data-toggle="dropdown"
+            //   aria-haspopup="true"
+            //   aria-expanded="false"
+            // />
+          }
+          <div className="dropdown-menu">
+            <div className="dropdown-item" onClick={() => history.push('/')}>
+              Item 1
+            </div>
+            <div className="dropdown-item" onClick={() => history.push('/')}>
+              Item 2
+            </div>
+            <div className="dropdown-item" onClick={() => history.push('/')}>
+              Item 3
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="nav-item
+          px-lg-5 
+          px-md-4
+          px-sm-3
+          px-3"
+          onClick={() => history.push('/')}
+        >
+          Login
+        </div>
+        <div className="navbar-collapse collapse">
+          <div
+            className="nav-item
+            px-lg-5 
+            pr-md-4
+            pl-md-3"
+            onClick={() => history.push('/')}
+          >
+            About
+          </div>
+        </div>
+        <div
+          className="nav-item
+          pr-lg-3 
+          pl-lg-5
+          px-md-3 
+          px-sm-3
+          px-3"
+          onClick={() => history.push('/')}
+        >
+          <i className="fab fa-facebook"></i>
+        </div>
+        <div
+          className="nav-item
+          pr-xl-5
+          pl-xl-3
+          pr-lg-4
+          pl-lg-3
+          px-md-3 
+          px-sm-3
+          px-3"
+          onClick={() => history.push('/')}
+        >
+          <i className="fab fa-twitter"></i>
+        </div>
       </div>
     </nav>
   </div>

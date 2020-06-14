@@ -13,5 +13,10 @@ import './bootstrap-styles/custom.scss';
 // import your own style-sheet as './index.css' or './index.scss'
 import './index.scss';
 
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
+
 const wrapper = document.getElementById('root');
 wrapper ? ReactDOM.render(<App />, wrapper) : false;
