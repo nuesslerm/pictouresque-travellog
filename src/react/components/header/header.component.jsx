@@ -21,7 +21,7 @@ const Header = ({ history }) => (
       >
         <Logo className="logo-container" />
       </div>
-      <div className="navbar-collapse collapse"></div>
+      <div className="navbar-collapse collapse">PicTourEsque</div>
 
       <div className="d-flex align-items-center">
         <div
@@ -40,12 +40,12 @@ const Header = ({ history }) => (
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Your&emsp;<i class="fas fa-camera-retro fa-fw fa-lg"></i>
+            Your&emsp;<i className="fas fa-camera-retro fa-fw fa-lg"></i>
             &nbsp;
           </div>
           {
             // <button
-            //   class="btn dropdown-toggle dropdown-toggle-split"
+            //   class=Name"btn dropdown-toggle dropdown-toggle-split"
             //   data-toggle="dropdown"
             //   aria-haspopup="true"
             //   aria-expanded="false"
