@@ -13,35 +13,49 @@ import './header.styles.scss';
 const Header = ({ history }) => (
   <div className="header-styles">
     <nav className="navbar navbar-expand-md navbar-light bg-light w-100">
-      <div className="navbar-brand" onClick={() => history.push('/')}>
+      <div
+        className="container-fluid 
+        d-flex align-items-center 
+        justify-content-sm-between 
+        justify-content-md-start"
+        onClick={() => history.push('/')}
+      >
         <div
-          className="pl-lg-5
-                    pr-lg-3
-                    px-md-3
-                    px-sm-3"
+          className="
+          pl-lg-5
+          pr-lg-3
+          px-md-3
+          px-sm-2
+          px-2"
         >
           <Logo className="logo-container" />
         </div>
 
         <div
-          className="navbar-collapse collapse 
-                    px-xl-5
-                    px-lg-3
-                    px-md-3
-                    px-sm-2"
+          className="
+          px-xl-5
+          px-lg-3
+          px-md-3
+          px-sm-3
+          px-3"
         >
           <h3>PicTourEsque</h3>
         </div>
       </div>
 
-      <div className="container-fluid d-flex justify-content-end">
+      <div
+        className="container-fluid 
+      d-flex justify-content-end
+      py-md-1
+      pb-3"
+      >
         <div
           className="nav-item active dropdown 
-                        px-xl-5
-                        px-lg-4
-                        px-md-3
-                        px-sm-3
-                        px-3"
+          px-xl-5
+          px-lg-4
+          px-md-3
+          px-sm-3
+          px-2"
         >
           <div
             // className="btn"
@@ -60,11 +74,11 @@ const Header = ({ history }) => (
 
         <div
           className="nav-item
-            px-xl-5 
-            px-lg-5 
-            px-md-4
-            px-sm-3
-            px-3"
+          px-xl-5 
+          px-lg-5 
+          px-md-4
+          px-sm-3
+          px-4"
           onClick={() => history.push('/')}
         >
           Login
@@ -72,10 +86,9 @@ const Header = ({ history }) => (
 
         <div
           className="nav-item d-none d-md-block
-              px-xl-5 
-              px-lg-5 
-              pr-md-4
-              pl-md-3"
+          px-xl-5 
+          px-lg-5 
+          px-md-4"
           onClick={() => history.push('/')}
         >
           About
@@ -83,13 +96,12 @@ const Header = ({ history }) => (
 
         <div
           className="nav-item
-            pr-lg-3 
-            pl-lg-5
-            pr-md-3 
-            pl-md-4 
-            px-sm-3 
-            pl-2
-            pr-3"
+          pr-lg-3 
+          pl-lg-5
+          pr-md-3 
+          pl-md-4 
+          px-sm-3 
+          px-3"
           onClick={() => history.push('/')}
         >
           <i className="fab fa-facebook"></i>
@@ -97,14 +109,13 @@ const Header = ({ history }) => (
 
         <div
           className="nav-item
-            pr-xl-5
-            pl-xl-3
-            pr-lg-4
-            pl-lg-3
-            px-md-3
-            px-sm-3
-            pl-2
-            pr-2"
+          pr-xl-5
+          pl-xl-3
+          pr-lg-4
+          pl-lg-3
+          px-md-3
+          px-sm-3
+          px-3"
           onClick={() => history.push('/')}
         >
           <i className="fab fa-twitter"></i>
