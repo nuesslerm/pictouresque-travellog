@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 // Create-react-app uses SVGR under the hood to make it possible to transform
 // and import SVG as a React component.
 // https://blog.logrocket.com/how-to-use-svgs-in-react/#:~:text=SVGs%20can%20be%20imported%20and,%7D%20from%20'.%2Flogo.
-import Logo from '../../../assets/beatport.svg';
+import Logo from '../../../assets/Office-Items.svg';
 
 import './header.styles.scss';
 
@@ -34,13 +34,14 @@ const Header = ({ history }) => (
         >
           <div
             // className="btn"
-            className="dropdown-toggle"
+            className="dropdown-toggle d-flex align-items-center"
             onClick={() => history.push('/')}
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
           >
-            {'Cart '}
+            Your&ensp;<i class="fas fa-camera-retro fa-fw fa-lg"></i>
+            &nbsp;
           </div>
           {
             // <button
@@ -52,19 +53,20 @@ const Header = ({ history }) => (
           }
           <div className="dropdown-menu">
             <div className="dropdown-item" onClick={() => history.push('/')}>
-              Item 1
+              Pic 1
             </div>
             <div className="dropdown-item" onClick={() => history.push('/')}>
-              Item 2
+              Pic 2
             </div>
             <div className="dropdown-item" onClick={() => history.push('/')}>
-              Item 3
+              Pic 3
             </div>
           </div>
         </div>
 
         <div
           className="nav-item
+          px-xl-5 
           px-lg-5 
           px-md-4
           px-sm-3
@@ -76,6 +78,7 @@ const Header = ({ history }) => (
         <div className="navbar-collapse collapse">
           <div
             className="nav-item
+            px-xl-5 
             px-lg-5 
             pr-md-4
             pl-md-3"
@@ -88,7 +91,8 @@ const Header = ({ history }) => (
           className="nav-item
           pr-lg-3 
           pl-lg-5
-          px-md-3 
+          pr-md-3 
+          pl-md-4 
           px-sm-3
           px-3"
           onClick={() => history.push('/')}
