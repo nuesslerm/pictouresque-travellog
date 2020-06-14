@@ -32,7 +32,7 @@ const Header = ({ history }) => (
         </div>
 
         <div
-          className="
+          className="brand-name-container
           px-xl-5
           px-lg-3
           px-md-3

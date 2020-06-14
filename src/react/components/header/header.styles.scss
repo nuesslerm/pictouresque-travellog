@@ -1,16 +1,12 @@
 .header-styles {
-  .navbar-brand {
+  .brand-name-container {
     cursor: pointer;
     // display: flex;
     // flex-direction: row;
   }
 
-  .nav-item {
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-
   .logo-container {
+    cursor: pointer;
     height: 100%;
     width: 6rem;
   }
@@ -18,16 +14,21 @@
   // how to make navbar-nav center-aligned:
   // https://stackoverflow.com/questions/18777235/center-content-in-responsive-bootstrap-navbar
 
-  .navbar-nav {
-    float: none;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
+  .nav-item {
+    cursor: pointer;
+    text-transform: uppercase;
   }
 
-  .navbar-nav > li {
-    display: inline-block;
-    float: none;
-  }
+  // .navbar-nav {
+  //   float: none;
+  //   margin: 0 auto;
+  //   display: flex;
+  //   flex-direction: row;
+  //   text-align: center;
+  // }
+
+  // .navbar-nav > li {
+  //   display: inline-block;
+  //   float: none;
+  // }
 }
