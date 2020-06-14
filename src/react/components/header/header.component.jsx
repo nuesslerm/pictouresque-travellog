@@ -40,7 +40,7 @@ const Header = ({ history }) => (
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Your&ensp;<i class="fas fa-camera-retro fa-fw fa-lg"></i>
+            Your&emsp;<i class="fas fa-camera-retro fa-fw fa-lg"></i>
             &nbsp;
           </div>
           {
