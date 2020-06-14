@@ -22,7 +22,9 @@ const Header = ({ history }) => (
       >
         <div
           className="
-          pl-lg-5
+          pl-xl-5
+          pr-xl-3
+          pl-lg-4
           pr-lg-3
           px-md-3
           px-sm-2
