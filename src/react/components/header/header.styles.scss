@@ -1,34 +1,56 @@
 .header-styles {
-  .brand-name-container {
-    cursor: pointer;
-    // display: flex;
-    // flex-direction: row;
-  }
-
-  .logo-container {
-    cursor: pointer;
+  nav {
+    @media (max-width: 767px) {
+      position: relative;
+    }
+    width: 100%;
     height: 100%;
-    width: 6rem;
+
+    // .container-fluid {
+    // max-width: 50%;
+    // }
+
+    .brand-container {
+      .logo-container {
+        cursor: pointer;
+        // height: 100%;
+        width: 6rem;
+        // You must pull back the item with the half of its width and height. You can achieve this with transform: translate(-50%, -50%);
+        // Bootstrap md -> sm breakpoint is at @media (min-width: 768px) { ... }
+        @media (max-width: 767px) {
+          position: absolute;
+          top: 75%;
+          left: 15%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .brand-name-container {
+        cursor: pointer;
+        // display: flex;
+        // flex-direction: row;
+      }
+    }
+
+    .nav-item {
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    // how to make navbar-nav center-aligned:
+    // https://stackoverflow.com/questions/18777235/center-content-in-responsive-bootstrap-navbar
+
+    // .navbar-nav {
+    //   float: none;
+    //   margin: 0 auto;
+    //   display: flex;
+    //   flex-direction: row;
+    //   text-align: center;
+    // }
+
+    // .navbar-nav > li {
+    //   display: inline-block;
+    //   float: none;
+    // }
   }
-
-  // how to make navbar-nav center-aligned:
-  // https://stackoverflow.com/questions/18777235/center-content-in-responsive-bootstrap-navbar
-
-  .nav-item {
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-
-  // .navbar-nav {
-  //   float: none;
-  //   margin: 0 auto;
-  //   display: flex;
-  //   flex-direction: row;
-  //   text-align: center;
-  // }
-
-  // .navbar-nav > li {
-  //   display: inline-block;
-  //   float: none;
-  // }
 }

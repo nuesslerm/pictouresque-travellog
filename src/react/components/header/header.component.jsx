@@ -12,12 +12,16 @@ import './header.styles.scss';
 
 const Header = ({ history }) => (
   <div className="header-styles">
-    <nav className="navbar navbar-expand-md navbar-light bg-light w-100">
+    <nav className="navbar container-fluid navbar-expand-md navbar-light bg-light w-100">
       <div
-        className="container-fluid 
+        className="brand-container
+        col-md-6
+        col-12
         d-flex align-items-center 
-        justify-content-sm-between 
-        justify-content-md-start"
+        justify-content-end 
+        justify-content-md-start
+        py-md-0
+        py-2"
         onClick={() => history.push('/')}
       >
         <div
@@ -46,17 +50,20 @@ const Header = ({ history }) => (
       </div>
 
       <div
-        className="container-fluid 
-      d-flex justify-content-end
-      py-md-1
-      pb-3"
+        // container-fluid
+        className="
+        col-md-6
+        col-12
+        d-flex justify-content-end
+        py-md-0
+        pb-3"
       >
         <div
           className="nav-item active dropdown 
           px-xl-5
           px-lg-4
           px-md-3
-          px-sm-3
+          px-sm-2
           px-2"
         >
           <div
@@ -67,7 +74,7 @@ const Header = ({ history }) => (
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <div className="d-none d-md-block">Your&emsp;</div>
+            <div className="d-none d-lg-block">Your&emsp;</div>
             <i className="fas fa-camera-retro fa-fw fa-lg"></i>
             &nbsp;
           </div>
