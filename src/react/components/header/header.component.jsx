@@ -22,6 +22,8 @@ const Header = ({ history }) => (
         justify-content-md-start
         py-md-0
         py-2"
+        // pt-2
+        // pb-2
         onClick={() => history.push('/')}
       >
         <div
@@ -43,7 +45,8 @@ const Header = ({ history }) => (
           px-lg-3
           px-md-3
           px-sm-3
-          px-3"
+          pl-3
+          pr-0"
         >
           <h3>PicTourEsque</h3>
         </div>
@@ -86,8 +89,8 @@ const Header = ({ history }) => (
           px-xl-5 
           px-lg-5 
           px-md-4
-          px-sm-3
-          px-4"
+          px-sm-4
+          px-3"
           onClick={() => history.push('/')}
         >
           Login
@@ -124,7 +127,8 @@ const Header = ({ history }) => (
           pl-lg-3
           px-md-3
           px-sm-3
-          px-3"
+          pl-3
+          pr-0"
           onClick={() => history.push('/')}
         >
           <i className="fab fa-twitter"></i>
