@@ -12,24 +12,25 @@ const HomePage = () => (
         style={{ backgroundImage: `url(${calm})` }}
       ></div>
       <div
-        className="testimonial-quote group "
+        className="testimonial-quote right"
         style={{ width: '600px', 'margin-left': 'auto' }}
       >
         <img src="http://placehold.it/120x120" />
         <div className="quote-container">
           <blockquote>
-            <p>
-              Overall, fantastic! I'd recommend them to anyone looking for a
-              creative,
-              <br /> thoughtful, and professional team.”
-            </p>
+            <p>Fantastic images.</p>
+            <div className="rating">
+              <i className="gold fas fa-3x fa-star"></i>
+              <i className="gold fas fa-3x fa-star"></i>
+              <i className="gold fas fa-3x fa-star"></i>
+              <i className="gold fas fa-3x fa-star"></i>
+              <i className="gold fas fa-3x fa-star"></i>
+            </div>
           </blockquote>
           <cite>
-            <span>Kristi Bruno</span>
+            <span>Markus Nüssler</span>
             <br />
             Social Media Specialist
-            <br />
-            American College of Chest Physicians
           </cite>
         </div>
       </div>
