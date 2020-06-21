@@ -1,14 +1,21 @@
+// @import '~compass-mixins/lib/compass/css3';
+
 .homepage {
   .cover-container {
     position: relative;
-    flex: 1 1 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    // grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+
     min-width: 30%;
     height: 400px;
-    justify-content: center;
-    align-items: center;
-    // grid-template-columns: 1fr;
-    // grid-template-rows: 1fr;
+    /** This is equivalent to flex: 1 1 auto. Beware, this is not the default value. 
+    It sizes the item based on its width/height properties, but makes it fully flexible 
+    so that they absorb any extra space along the main axis. */
+    flex: 1 1 auto;
+    justify-items: stretch;
+    // justify-content: center;
+    // align-items: center;
     overflow: hidden;
     // height: 240px;
     // border-top: 1px  rgba(168, 161, 161, 0.315);
@@ -18,84 +25,93 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      background-position: center bottom;
+      background-position: center center;
+      @media (max-width: 1300px) {
+        background-position: center bottom;
+      }
       background-size: cover;
       filter: blur(2px);
     }
-  }
-}
 
-@import '~compass-mixins/lib/compass/css3';
+    .testimonial-quote {
+      // start from the right
+      // grid-column-end: -1;
+      // start from the left
+      grid-column-start: 1;
+      // justify div's content to the right
+      justify-self: center;
+      align-self: center;
+      position: relative;
 
-.testimonial-quote blockquote {
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-  text-shadow: 0 1px black;
-  text-align: center;
+      padding-left: 30px;
+      padding-right: 100px;
 
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 0.6em 0 1em;
-  margin: 10px;
-  border: 3px solid #f1f1f1;
-  border-radius: 30px 15px 30px 50px;
-}
+      img {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 80%;
+        left: 90%;
 
-.testimonial-quote img {
-  border-radius: 50%;
-  display: block;
-  width: 120px;
-  height: 120px;
-}
+        border-color: white;
+        border-style: solid;
+        border-width: 0 1px 1px 0;
+        border-radius: 50%;
+        // padding: 15px;
+        width: 95px;
+        height: 95px;
+      }
+      .quote-container {
+        .blockquote {
+          height: 100%;
+          width: 120%;
 
-.testimonial-quote cite {
-  color: white;
-  font-weight: bold;
-  display: block;
-  font-size: 0.8em;
-  text-shadow: none;
-}
+          color: white;
+          font-size: 1.5em;
+          font-weight: bold;
+          text-shadow: 0 1px black;
+          text-align: center;
 
-// .testimonial-quote cite span {
-//   color: #5e5e5e;
-//   font-size: 1em;
-//   font-style: normal;
-//   font-weight: 700;
-//   letter-spacing: 1px;
-//   text-transform: uppercase;
-//   text-shadow: 0 1px white;
-// }
+          background-color: rgba(0, 0, 0, 0.4);
+          padding: 0.6em 0 1em;
+          margin: 10px;
+          border-color: #f1f1f1;
+          border-style: solid;
+          border-width: 4px 2px 2px 3px;
+          // border-width: 0 4px 4px 0;
+          // border-radius: 10px 10px 30px 10px;
+          .rating {
+            font-size: 0.5em;
+            & .gold {
+              color: #ffc107;
+            }
 
-.testimonial-quote {
-  position: relative;
-}
+            & .grey {
+              color: rgba($color: white, $alpha: 0.85);
+            }
+          }
+        }
 
-// .testimonial-quote .quote-container {
-//   padding-left: 160px;
-// }
-
-.testimonial-quote.right .quote-container {
-  padding-left: 0;
-  padding-right: 160px;
-}
-
-// .testimonial-quote.right img {
-//   left: auto;
-//   right: 0;
-// }
-
-.testimonial-quote.right cite {
-  text-align: right;
-}
-
-.rating {
-  font-size: 14px;
-
-  & .gold {
-    color: #ffc107; /* Personal color choice. Lifted from Bootstrap 4 */
-  }
-
-  & .grey {
-    color: rgba($color: white, $alpha: 0.85);
+        .cite-container {
+          display: flex;
+          justify-content: flex-end;
+          .cite {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: rgb(255, 255, 255);
+            font-size: 0.8em;
+            text-shadow: none;
+            text-align: right;
+            span {
+              font-size: 1.05em;
+              font-weight: bolder;
+              border-bottom: 1px solid;
+              margin: 4px;
+            }
+            p {
+              margin: 4px;
+            }
+          }
+        }
+      }
+    }
   }
 }
