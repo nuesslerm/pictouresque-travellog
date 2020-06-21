@@ -13,7 +13,7 @@
     It sizes the item based on its width/height properties, but makes it fully flexible 
     so that they absorb any extra space along the main axis. */
     flex: 1 1 auto;
-    justify-items: stretch;
+    // justify-items: start;
     // justify-content: center;
     // align-items: center;
     overflow: hidden;
@@ -30,7 +30,7 @@
         background-position: center bottom;
       }
       background-size: cover;
-      filter: blur(2px);
+      filter: blur(1px);
     }
 
     .testimonial-quote {
@@ -42,9 +42,14 @@
       justify-self: center;
       align-self: center;
       position: relative;
-
       padding-left: 30px;
       padding-right: 100px;
+
+      @media (max-width: 1000px) {
+        align-self: flex-start;
+        padding-left: 10px;
+        padding-right: 100px;
+      }
 
       img {
         position: absolute;
@@ -66,13 +71,13 @@
           width: 120%;
 
           color: white;
-          font-size: 1.5em;
+          font-size: 1.2em;
           font-weight: bold;
           text-shadow: 0 1px black;
           text-align: center;
 
           background-color: rgba(0, 0, 0, 0.4);
-          padding: 0.6em 0 1em;
+          padding: 0.6em 0.2em 1em;
           margin: 10px;
           border-color: #f1f1f1;
           border-style: solid;

@@ -20,7 +20,9 @@ const HomePage = () => (
         <img src={`${testimonial}`} />
         <div className="quote-container">
           <div className="blockquote">
-            <p>« I like it »</p>
+            <p>
+              « I don't know what I would do without my bike on a sunny ... »
+            </p>
             <div className="rating">
               <i className="gold fas fa-3x fa-star"></i>
               <i className="gold fas fa-3x fa-star"></i>
@@ -33,7 +35,7 @@ const HomePage = () => (
             <div class="cite">
               <span>Markus Nüssler</span>
               <br />
-              <p>Social Media Specialist</p>
+              <p>Travel Blogger</p>
             </div>
           </div>
         </div>
