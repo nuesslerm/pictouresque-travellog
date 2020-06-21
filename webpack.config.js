@@ -29,7 +29,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'src'),
+    contentBase: path.join(__dirname, 'client/src'),
     watchContentBase: true,
     hot: true,
     open: true,
@@ -40,7 +40,7 @@ module.exports = {
   // and insert your JS bundle there.
   plugins: [
     new HtmlWebPackPlugin({
-      template: path.resolve('./src/index.html'),
+      template: path.resolve('./client/src/index.html'),
       // needs to be index.html
       filename: 'index.html',
     }),
@@ -59,9 +59,11 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          // options: {
-          //   presets: ['@babel/preset-env', '@babel/preset-react'],
-          // },
+          // taken from .babelrc
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: [['@babel/plugin-proposal-class-properties']],
+          },
         },
       },
       {
