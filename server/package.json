@@ -8,10 +8,14 @@
   "homepage": "https://nuesslerm.github.io/",
   "scripts": {
     "start": "node src/index.js",
-    "build": "webpack --config webpack.config.js --mode production"
+    "dev": "nodemon src/index.js",
+    "lint": "eslint src/"
   },
   "devDependencies": {
     "eslint": "^7.3.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "nodemon": "^2.0.4",
     "prettier": "^2.0.5"
   },
   "dependencies": {
