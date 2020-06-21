@@ -21,7 +21,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: ['./client/src/index.js'],
+  entry: ['./src/index.js'],
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -29,7 +29,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'client/src'),
+    contentBase: path.join(__dirname, 'src'),
     watchContentBase: true,
     hot: true,
     open: true,
@@ -40,7 +40,7 @@ module.exports = {
   // and insert your JS bundle there.
   plugins: [
     new HtmlWebPackPlugin({
-      template: path.resolve('./client/src/index.html'),
+      template: path.resolve('./src/index.html'),
       // needs to be index.html
       filename: 'index.html',
     }),
@@ -60,10 +60,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           // taken from .babelrc
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: [['@babel/plugin-proposal-class-properties']],
-          },
+          // options: {
+          //   presets: ['@babel/preset-env', '@babel/preset-react'],
+          //   plugins: [['@babel/plugin-proposal-class-properties']],
+          // },
         },
       },
       {
