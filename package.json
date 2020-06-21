@@ -7,10 +7,12 @@
   "private": true,
   "homepage": "https://nuesslerm.github.io/",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --open --mode development",
+    "dev": "webpack-dev-server --config webpack.config.js --open --mode development",
     "build": "webpack --config webpack.config.js --mode production",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "start": "node herokuApp.js",
+    "heroku-postbuild": "webpack -p"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -22,6 +24,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
     "cssnano": "^4.1.10",
+    "eslint": "^7.3.0",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
@@ -30,6 +33,7 @@
     "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "precss": "^4.0.0",
+    "prettier": "^2.0.5",
     "sass": "^1.26.7",
     "sass-loader": "^8.0.2",
     "url-loader": "^4.1.0",
@@ -38,18 +42,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "animate.css": "^4.1.0",
-    "bootstrap": "^4.5.0",
-    "compass": "^0.1.1",
-    "compass-mixins": "^0.12.10",
-    "gh-pages": "^3.0.0",
-    "popper.js": "^1.16.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5",
-    "redux-logger": "^3.0.6"
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.1",
+    "morgan": "^1.10.0"
   }
 }
