@@ -30,8 +30,17 @@ var logEntrySchema = new Schema(
       max: 5,
       default: 0,
     },
-    latitude: requiredNumber,
-    longitude: requiredNumber,
+    // TODO: use GeoJSON from mongoose
+    latitude: {
+      ...requiredNumber,
+      min: -90,
+      max: 90,
+    },
+    longitude: {
+      ...requiredNumber,
+      min: -180,
+      max: 180,
+    },
     visitDate: {
       type: Date,
       required: true,
