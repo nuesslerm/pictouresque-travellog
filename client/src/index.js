@@ -18,7 +18,7 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
-import './assets/favicon-mug.ico';
+import './assets/favicon.ico';
 
 const wrapper = document.getElementById('root');
 wrapper ? ReactDOM.render(<App />, wrapper) : false;

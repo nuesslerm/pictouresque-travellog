@@ -26,6 +26,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
+    publicPath: '/',
   },
 
   devServer: {
@@ -34,6 +35,7 @@ module.exports = {
     hot: true,
     open: true,
     inline: true,
+    historyApiFallback: true,
   },
 
   // this is an html plugin that will automatically create an index.html from template

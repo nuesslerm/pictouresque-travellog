@@ -32,7 +32,7 @@ const HomePage = () => (
             </div>
           </div>
           <div className="cite-container">
-            <div class="cite">
+            <div className="cite">
               <span>Markus Nüssler</span>
               <br />
               <p>Travel Blogger</p>
