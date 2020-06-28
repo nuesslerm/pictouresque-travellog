@@ -31,7 +31,7 @@ app.use(
   })
 );
 
-// added json body parsing middle-ware (needed for posting requests with JSON body)
+// added json body parsing middle-ware (needed for post requests with JSON body)
 app.use(express.json());
 
 // default route '/'

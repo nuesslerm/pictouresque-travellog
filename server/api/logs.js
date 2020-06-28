@@ -4,10 +4,19 @@ const LogEntry = require('../models/LogEntry');
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.json({
-    message: '🌍',
-  });
+router.get('/', async (req, res, next) => {
+  // res.json({
+  //   message: '🌍',
+  // });
+
+  // warp in a try-catch, in case something does go wrong; so we can pass it to the
+  // error handler in case it does (e.g. api couldn't connect to DB)
+  try {
+    const entries = await LogEntry.find();
+    res.json(entries);
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.post('/', async (req, res, next) => {
