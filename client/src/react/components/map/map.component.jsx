@@ -1,28 +1,74 @@
 import React from 'react';
-import { useState } from 'react';
 import ReactMapGL from 'react-map-gl';
+import MapStylePicker from '../map-style-picker/map-style-picker.component.jsx';
+
+import './map.styles.scss';
 
 const REACT_APP_MAPBOX_TOKEN =
   'pk.eyJ1IjoibnVlc3NsZXJtIiwiYSI6ImNrYnpteTV6ejFiNnYyd3Rianh2eXZnbzYifQ.o9U1MXqcUIJ9iy1yhmKgKg';
 
-const Map = () => {
-  const [viewport, setViewport] = useState({
-    width: 400,
-    height: 400,
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 8,
-  });
+class Map extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      style: 'mapbox://styles/mapbox/light-v9',
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+        longitude: -74,
+        latitude: 40.7,
+        zoom: 11,
+        maxZoom: 16,
+      },
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this._resize);
+    this._resize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._resize);
+  }
+
+  onStyleChange = (style) => {
+    this.setState({ style });
+  };
+
+  _onViewportChange = (viewport) => {
+    this.setState({
+      viewport: { ...this.state.viewport, ...viewport },
+    });
+  };
+
+  _resize = () => {
+    this._onViewportChange({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
 
   // console.log('process', process.env.REACT_APP_MAPBOX_TOKEN);
-  return (
-    <ReactMapGL
-      {...viewport}
-      // mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-      mapboxApiAccessToken={REACT_APP_MAPBOX_TOKEN}
-      onViewportChange={(nextViewport) => setViewport(nextViewport)}
-    />
-  );
-};
+  render() {
+    return (
+      <div className="map-component">
+        <MapStylePicker
+          onStyleChange={this.onStyleChange}
+          currentStyle={this.state.style}
+        />
+        <ReactMapGL
+          className="map-gl"
+          {...this.state.viewport}
+          mapStyle={this.state.style}
+          // mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+          mapboxApiAccessToken={REACT_APP_MAPBOX_TOKEN}
+          onViewportChange={(viewport) => this._onViewportChange(viewport)}
+        />
+      </div>
+    );
+  }
+}
 
 export default Map;
