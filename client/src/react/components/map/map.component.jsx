@@ -7,6 +7,9 @@ import './map.styles.scss';
 const REACT_APP_MAPBOX_TOKEN =
   'pk.eyJ1IjoibnVlc3NsZXJtIiwiYSI6ImNrYnpteTV6ejFiNnYyd3Rianh2eXZnbzYifQ.o9U1MXqcUIJ9iy1yhmKgKg';
 
+// the following mapbox implementation was partially taken from
+// http://vis.academy/#/building-a-geospatial-app/1-starting-with-a-map
+
 class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -16,9 +19,9 @@ class Map extends React.Component {
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
-        longitude: -74,
-        latitude: 40.7,
-        zoom: 11,
+        latitude: 50.5,
+        longitude: 10.4541194,
+        zoom: 5.3,
         maxZoom: 16,
       },
     };
