@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 
 import App from './react/App.js';
 
+// if you use async or generator functions, you need to add this
+// https://www.npmjs.com/package/regenerator-runtime
+import 'regenerator-runtime/runtime.js';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 

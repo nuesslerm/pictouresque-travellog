@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactMapGL from 'react-map-gl';
 import MapStylePicker from '../map-style-picker/map-style-picker.component.jsx';
+
+import { listLogEntries } from '../../API.js';
 
 import './map.styles.scss';
 
@@ -10,68 +12,66 @@ const REACT_APP_MAPBOX_TOKEN =
 // the following mapbox implementation was partially taken from
 // http://vis.academy/#/building-a-geospatial-app/1-starting-with-a-map
 
-class Map extends React.Component {
-  constructor(props) {
-    super(props);
+// how to turn a stateful component without hooks into a functional component
+// with react-hooks useState and useEffect
 
-    this.state = {
-      style: 'mapbox://styles/mapbox/light-v9',
-      viewport: {
-        width: window.innerWidth,
-        height: window.innerHeight,
-        latitude: 50.5,
-        longitude: 10.4541194,
-        zoom: 5.3,
-        maxZoom: 16,
-      },
+const Map = () => {
+  const [style, setStyle] = useState('mapbox://styles/mapbox/light-v9');
+  const [viewport, setViewport] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+    latitude: 50.5,
+    longitude: 10.4541194,
+    zoom: 5.3,
+    maxZoom: 16,
+  });
+
+  useEffect(() => {
+    (async () => {
+      const logEntries = await listLogEntries();
+      console.log(logEntries);
+    })();
+
+    window.addEventListener('resize', _resize);
+    // _resize();
+
+    return function cleanup() {
+      window.removeEventListener('resize', _resize);
     };
+  }, []);
+
+  function _onViewportChange(viewportChange) {
+    setViewport({ ...viewport, ...viewportChange });
   }
 
-  componentDidMount() {
-    window.addEventListener('resize', this._resize);
-    this._resize();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this._resize);
-  }
-
-  onStyleChange = (style) => {
-    this.setState({ style });
-  };
-
-  _onViewportChange = (viewport) => {
-    this.setState({
-      viewport: { ...this.state.viewport, ...viewport },
-    });
-  };
-
-  _resize = () => {
-    this._onViewportChange({
+  function _resize() {
+    _onViewportChange({
       width: window.innerWidth,
       height: window.innerHeight,
     });
-  };
-
-  // console.log('process', process.env.REACT_APP_MAPBOX_TOKEN);
-  render() {
-    return (
-      <div className="map-component">
-        <MapStylePicker
-          onStyleChange={this.onStyleChange}
-          currentStyle={this.state.style}
-        />
-        <ReactMapGL
-          className="map-gl"
-          {...this.state.viewport}
-          mapStyle={this.state.style}
-          // mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-          mapboxApiAccessToken={REACT_APP_MAPBOX_TOKEN}
-          onViewportChange={(viewport) => this._onViewportChange(viewport)}
-        />
-      </div>
-    );
   }
-}
+
+  function onStyleChange(style) {
+    setStyle(style);
+  }
+
+  // console.log(style);
+  // console.log(viewport);
+  // console.log('process', process.env.REACT_APP_MAPBOX_TOKEN);
+
+  return (
+    <div className="map-component">
+      <MapStylePicker onStyleChange={onStyleChange} currentStyle={style} />
+      <ReactMapGL
+        className="map-gl"
+        {...viewport}
+        mapStyle={style}
+        // mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        mapboxApiAccessToken={REACT_APP_MAPBOX_TOKEN}
+        onViewportChange={(viewportChange) => _onViewportChange(viewportChange)}
+      />
+    </div>
+  );
+};
 
 export default Map;
