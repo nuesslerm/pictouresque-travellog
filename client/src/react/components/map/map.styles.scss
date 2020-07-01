@@ -1,3 +1,17 @@
 .map-component {
   position: relative;
+
+  .pin-container {
+    // stroke: #966b40;
+    // height: 24px;
+    // width: 24px;
+    // translate of marker is equivalent to
+    // offsetLeft={-12} => 50% of marker width
+    // offsetTop={-24} => 100% of marker height
+    transform: translate(-50%, -100%);
+  }
+
+  .map-popup-container {
+    max-width: 300px;
+  }
 }
